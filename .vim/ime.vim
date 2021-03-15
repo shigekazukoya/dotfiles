@@ -11,5 +11,5 @@ augroup Norml
 augroup END
 
 function! s:IsImeActivate()
-	return system($zenhan)
+	return system('$zenhan')
 endfunction
