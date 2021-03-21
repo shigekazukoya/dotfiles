@@ -1,21 +1,34 @@
-source ~/dotfiles/.vim/plug.vim
-source ~/dotfiles/.vim/airline.vim
-source ~/dotfiles/.vim/unit.vim
-source ~/dotfiles/.vim/indTexObj.vim
-source ~/dotfiles/.vim/easymotion.vim
-source ~/dotfiles/.vim/neadTree.vim
-source ~/dotfiles/.vim/expand_region.vim
-source ~/dotfiles/.vim/ime.vim
-source ~/dotfiles/.vim/coc.vim
-source ~/dotfiles/.vim/tcomment.vim
-source ~/dotfiles/.vim/color.vim
+  source ~/dotfiles/.vim/plug.vim
+  source ~/dotfiles/.vim/airline.vim
+  source ~/dotfiles/.vim/unit.vim
+  source ~/dotfiles/.vim/indTexObj.vim
+  source ~/dotfiles/.vim/easymotion.vim
+  source ~/dotfiles/.vim/neadTree.vim
+  source ~/dotfiles/.vim/expand_region.vim
+  source ~/dotfiles/.vim/ime.vim
+  source ~/dotfiles/.vim/coc.vim
+  source ~/dotfiles/.vim/tcomment.vim
+  source ~/dotfiles/.vim/color.vim
+  source ~/dotfiles/.vim/incsearch.vim
+  source ~/dotfiles/.vim/winresizer.vim
+  source ~/dotfiles/.vim/gitgutter.vim
+  source ~/dotfiles/.vim/mark.vim
 
 "system
 set clipboard&
 set clipboard^=unnamedplus
 set mouse=a
 
-"variables
+" Windows Subsystem for Linux で、ヤンクでクリップボードにコピー
+if system('uname -a | grep Microsoft') != ''
+augroup myYank
+autocmd!
+  autocmd TextYankPost * :call system('clip.exe', @")
+augroup END
+endif
+
+
+" variables
 let mapleader="\<Space>"
 
 "search
@@ -43,11 +56,14 @@ set wrapscan
 set number
 set ts=4
 set shiftwidth=4
+set noswapfile
+set nobackup
 
 "status
-set visualbell
+set visualbell t_vb=
 set laststatus=2
 set wildmenu
+set noerrorbells
 
 "IME
 set iminsert=0
@@ -57,17 +73,18 @@ set imsearch=0
 set splitbelow
 set splitright
 
-nnoremap <Leader>h <C-w>h 
-nnoremap <Leader>j <C-w>j 
-nnoremap <Leader>k <C-w>k 
-nnoremap <Leader>l <C-w>l 
-nnoremap <Leader>H <C-w>H 
-nnoremap <Leader>J <C-w>J 
-nnoremap <Leader>K <C-w>K 
-nnoremap <Leader>L <C-w>L 
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>H <C-w>H
+nnoremap <Leader>J <C-w>J
+nnoremap <Leader>K <C-w>K
+nnoremap <Leader>L <C-w>L
 
-nnoremap <Leader>s :sp<CR><C-w>w
-nnoremap <Leader>v :vs<CR><C-w>w
+nnoremap <Leader>sp :sp<CR><C-w>w
+nnoremap <Leader>vs :vs<CR><C-w>w
+map <leader>sl <Plug>(easymotion-bd-jk)
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
@@ -76,13 +93,19 @@ nnoremap ! :!
 "Tab
 nnoremap <silent> tt gt
 nnoremap <silent> tr gT
-nnoremap te :tab new 
+nnoremap te :tab new<Space>
 
 "buffer
 nnoremap > :bn<CR>
 nnoremap < :bp<CR>
-nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>dd :bd<CR>
 nnoremap <Leader>file :Files<CR>
+
+augroup vimrc-checktime
+  autocmd!
+autocmd WinEnter * checktime
+augroup END
+
 
 "補完
 set infercase
@@ -131,13 +154,17 @@ vnoremap <Leader>, <<
 vnoremap <Leader>. >>
 
 "terminal
-"set termwinkey=<C-q> 
+"set termwinkey=<C-q>
 "tnoremap <silent> <Esc><Esc> <C-q>w
 
 "utility
-nnoremap <Leader>vim :tab new ~/.vimrc<CR>
+nnoremap <Leader>vim :e ~/.vimrc<CR>
 nnoremap <Leader>so :source ~/.vimrc<CR>
 nnoremap <Leader>go :QuickRun<CR>
 nnoremap <Leader>dir :NERDTreeFind %<CR>
 nnoremap <Leader>dot :NERDTreeToggle ~/dotfiles/.vim<CR>
 nnoremap <Leader>ter :vertical terminal<CR>
+nnoremap <Leader>zz :Goyo<CR>
+nnoremap <Leader>buf :Buffers<CR>
+nnoremap <Leader>new :e<Space>
+
