@@ -28,4 +28,8 @@ Plug 'jacquesbh/vim-showmarks'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'simeji/winresizer'
+Plug 'lambdalisue/fern.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 call plug#end()
+

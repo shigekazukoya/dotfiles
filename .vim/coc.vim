@@ -29,3 +29,4 @@ nmap <silent> <Leader>rf <Plug>(coc-references)
 nmap <silent> <Leader>rn <Plug>(coc-rename)
 "スペースfmtでFormat
 nmap <silent> <Leader>fmt <Plug>(coc-format)
+

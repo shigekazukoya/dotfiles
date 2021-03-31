@@ -3,7 +3,7 @@
   source ~/dotfiles/.vim/unit.vim
   source ~/dotfiles/.vim/indTexObj.vim
   source ~/dotfiles/.vim/easymotion.vim
-  source ~/dotfiles/.vim/neadTree.vim
+  source ~/dotfiles/.vim/nerdTree.vim
   source ~/dotfiles/.vim/expand_region.vim
   source ~/dotfiles/.vim/ime.vim
   source ~/dotfiles/.vim/coc.vim
@@ -13,6 +13,9 @@
   source ~/dotfiles/.vim/winresizer.vim
   source ~/dotfiles/.vim/gitgutter.vim
   source ~/dotfiles/.vim/mark.vim
+  source ~/dotfiles/.vim/snippets.vim
+  source ~/dotfiles/.vim/fzf.vim
+  source ~/dotfiles/.vim/goyo.vim
 
 "system
 set clipboard&
@@ -37,6 +40,7 @@ set smartcase
 set incsearch
 set hlsearch
 set showmatch
+set shortmess-=S
 nnoremap <Esc><Esc> :noh<CR><Esc>
 
 nnoremap n nzz
@@ -58,13 +62,17 @@ set ts=4
 set shiftwidth=4
 set noswapfile
 set nobackup
-
+" set termencoding=cp932
 "status
 set visualbell t_vb=
 set laststatus=2
 set wildmenu
 set noerrorbells
+"" + => increment
+nnoremap + <C-a>
 
+"" - => decrement
+nnoremap - <C-x>
 "IME
 set iminsert=0
 set imsearch=0
@@ -99,7 +107,7 @@ nnoremap te :tab new<Space>
 nnoremap > :bn<CR>
 nnoremap < :bp<CR>
 nnoremap <Leader>dd :bd<CR>
-nnoremap <Leader>file :Files<CR>
+nnoremap <Leader>bd :bd<CR>
 
 augroup vimrc-checktime
   autocmd!
@@ -122,6 +130,8 @@ endif
 "mode
 inoremap <silent> jj <ESC>:w<CR>
 inoremap <C-j> <ESC>
+
+tnoremap <ESC> <C-\><C-n>
 
 nnoremap ; :
 nnoremap : ;
@@ -160,11 +170,6 @@ vnoremap <Leader>. >>
 "utility
 nnoremap <Leader>vim :e ~/.vimrc<CR>
 nnoremap <Leader>so :source ~/.vimrc<CR>
-nnoremap <Leader>go :QuickRun<CR>
-nnoremap <Leader>dir :NERDTreeFind %<CR>
-nnoremap <Leader>dot :NERDTreeToggle ~/dotfiles/.vim<CR>
-nnoremap <Leader>ter :vertical terminal<CR>
-nnoremap <Leader>zz :Goyo<CR>
-nnoremap <Leader>buf :Buffers<CR>
 nnoremap <Leader>new :e<Space>
 
+nnoremap <Leader>ter :vertical terminal<CR>
