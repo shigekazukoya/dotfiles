@@ -1,4 +1,7 @@
 let s:lastiminsert = 0
+set iminsert=0
+set imsearch=0
+
 augroup Norml
 	autocmd!
 	" IMEの状態を保持しておく、置換モードではIMEの状態を保持しない

@@ -14,3 +14,8 @@ gitをCLIで使えるようにする
 なんか
 
 会社のパソコンよりは快適に操作ができる
+
+
+apple  = red
+grass += green
+sky   -= blue

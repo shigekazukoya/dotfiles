@@ -1,5 +1,4 @@
 let NERDTreeShowHidden=1
-
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -17,4 +16,5 @@ augroup NERD
 augroup END
 
 nnoremap <Leader>dir :NERDTreeFind %<CR>
-nnoremap <Leader>dot :NERDTreeToggle ~/dotfiles/.vim<CR>
+nnoremap <Leader>dvim :NERDTree ~/dotfiles/.vim/plugins<CR>
+nnoremap <Leader>dot :NERDTree ~/dotfiles<CR>

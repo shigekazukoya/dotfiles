@@ -1,17 +1,10 @@
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'yuttie/comfortable-motion.vim'
-"Plug 'brglng/vim-im-select'
-" ファイルオープンを便利に
-Plug 'Shougo/unite.vim'
-" " Unite.vimで最近使ったファイルを表示できるようにする
-Plug 'Shougo/neomru.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'thinca/vim-quickrun'
 Plug 'pepo-le/win-ime-con.nvim'
@@ -31,5 +24,12 @@ Plug 'simeji/winresizer'
 Plug 'lambdalisue/fern.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'kana/vim-niceblock'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 call plug#end()
 

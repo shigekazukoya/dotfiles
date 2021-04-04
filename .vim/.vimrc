@@ -1,78 +1,57 @@
-  source ~/dotfiles/.vim/plug.vim
-  source ~/dotfiles/.vim/airline.vim
-  source ~/dotfiles/.vim/unit.vim
-  source ~/dotfiles/.vim/indTexObj.vim
-  source ~/dotfiles/.vim/easymotion.vim
-  source ~/dotfiles/.vim/nerdTree.vim
-  source ~/dotfiles/.vim/expand_region.vim
-  source ~/dotfiles/.vim/ime.vim
-  source ~/dotfiles/.vim/coc.vim
-  source ~/dotfiles/.vim/tcomment.vim
-  source ~/dotfiles/.vim/color.vim
-  source ~/dotfiles/.vim/incsearch.vim
-  source ~/dotfiles/.vim/winresizer.vim
-  source ~/dotfiles/.vim/gitgutter.vim
-  source ~/dotfiles/.vim/mark.vim
-  source ~/dotfiles/.vim/snippets.vim
-  source ~/dotfiles/.vim/fzf.vim
-  source ~/dotfiles/.vim/goyo.vim
+let mapleader="\<Space>"
 
 "system
+let $VIMRUNTIME="/usr/share/nvim/runtime"
+set runtimepath+=/usr/share/nvim/runtime
 set clipboard&
 set clipboard^=unnamedplus
 set mouse=a
 
-" Windows Subsystem for Linux で、ヤンクでクリップボードにコピー
 if system('uname -a | grep Microsoft') != ''
-augroup myYank
-autocmd!
-  autocmd TextYankPost * :call system('clip.exe', @")
-augroup END
+	augroup myYank
+		autocmd!
+		autocmd TextYankPost * :call system('clip.exe', @")
+	augroup END
 endif
-
-
-" variables
-let mapleader="\<Space>"
 
 "search
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set wrapscan
 set showmatch
 set shortmess-=S
-nnoremap <Esc><Esc> :noh<CR><Esc>
-
+set noexpandtab
+nnoremap <Esc><Esc> :noh<CR>
 nnoremap n nzz
 nnoremap N Nzz
 vnoremap n nzz
 vnoremap N Nzz
 
-" カーソル下の単語を、置換後の文字列の入力を待つ状態にする
-nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
-nnoremap gs  :<C-u>%s///ig<Left><Left><Left>
-vnoremap gs  :s///g<Left><Left><Left>
+"grep
+nnoremap tn :cn<CR>
+nnoremap tN :cp<CR>
+
+augroup QuickFix
+	autocmd!
+	autocmd QuickFixCmdPost *grep* cwindow
+	autocmd filetype qf wincmd L
+augroup END
 
 "editor
 set encoding=utf-8
 scriptencoding utf-8
-set wrapscan
 set number
-set ts=4
-set shiftwidth=4
-set noswapfile
-set nobackup
-" set termencoding=cp932
-"status
 set visualbell t_vb=
-set laststatus=2
-set wildmenu
 set noerrorbells
-"" + => increment
-nnoremap + <C-a>
 
-"" - => decrement
+nnoremap + <C-a>
 nnoremap - <C-x>
+
+"statusLine
+set laststatus=2
+
 "IME
 set iminsert=0
 set imsearch=0
@@ -89,14 +68,21 @@ nnoremap <Leader>H <C-w>H
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
-
 nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
-map <leader>sl <Plug>(easymotion-bd-jk)
+
+"Command
+set wildmenu
+set showcmd
+set history=10000
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
 nnoremap ! :!
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 "Tab
 nnoremap <silent> tt gt
@@ -104,16 +90,38 @@ nnoremap <silent> tr gT
 nnoremap te :tab new<Space>
 
 "buffer
-nnoremap > :bn<CR>
-nnoremap < :bp<CR>
+set hidden
+set autoread
+set backup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/swap
+set undofile
+set undodir=$HOME/.vim/undo_dir
+
+nnoremap < :bn<CR>
+nnoremap > :bp<CR>
 nnoremap <Leader>dd :bd<CR>
 nnoremap <Leader>bd :bd<CR>
 
+if has('persistent_undo')
+	if !isdirectory(&undodir)
+		call mkdir(&undodir, "p")
+	endif
+endif
+if !isdirectory(&backupdir)
+	call mkdir(&backupdir, "p")
+endif
+if !isdirectory(&directory)
+	call mkdir(&directory, "p")
+endif
+
 augroup vimrc-checktime
-  autocmd!
-autocmd WinEnter * checktime
+	autocmd!
+	autocmd InsertEnter,WinEnter * checktime
 augroup END
 
+"syntax
+syntax enable
 
 "補完
 set infercase
@@ -131,45 +139,52 @@ endif
 inoremap <silent> jj <ESC>:w<CR>
 inoremap <C-j> <ESC>
 
+"terminal
 tnoremap <ESC> <C-\><C-n>
-
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
 
 "cursolMove
 nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L g_
-
 nnoremap k gk
 nnoremap j gj
 vnoremap k gk
 vnoremap j gj
 nnoremap <silent>J 15j
 nnoremap <silent>K 15k
+nnoremap <Leader>a ^
+vnoremap <Leader>a ^
+nnoremap <Leader>e $
+vnoremap <Leader>e $h
 
-"edit
+"yank
 nnoremap x "_x
 vnoremap x "_x
+vnoremap p ]p
 vnoremap p "_dp
+nnoremap <Leader>p "+p
 nnoremap Y y$
 
-"editor-indent
+"indent
+set expandtab
+set autoindent
+set ts=2
+set shiftwidth=2
 nnoremap <Leader>, <}
 nnoremap <Leader>. >}
 vnoremap <Leader>, <<
 vnoremap <Leader>. >>
 
-"terminal
-"set termwinkey=<C-q>
-"tnoremap <silent> <Esc><Esc> <C-q>w
-
 "utility
-nnoremap <Leader>vim :e ~/.vimrc<CR>
-nnoremap <Leader>so :source ~/.vimrc<CR>
+nnoremap <Leader>vim :e $MYVIMRC<CR>
+nnoremap <Leader>so :source $MYVIMRC<CR>
 nnoremap <Leader>new :e<Space>
-
 nnoremap <Leader>ter :vertical terminal<CR>
+
+"plugins
+source ~/dotfiles/.vim/plugins.vim
+set runtimepath+=~/dotfiles/.vim
+runtime! plugins/*.vim
+
+lua require('plugins')
