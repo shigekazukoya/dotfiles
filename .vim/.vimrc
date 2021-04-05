@@ -32,7 +32,6 @@ vnoremap N Nzz
 "grep
 nnoremap tn :cn<CR>
 nnoremap tN :cp<CR>
-
 augroup QuickFix
 	autocmd!
 	autocmd QuickFixCmdPost *grep* cwindow
@@ -98,8 +97,8 @@ set directory=$HOME/.vim/swap
 set undofile
 set undodir=$HOME/.vim/undo_dir
 
-nnoremap < :bn<CR>
-nnoremap > :bp<CR>
+nnoremap < :bn<CR>zz
+nnoremap > :bp<CR>zz
 nnoremap <Leader>dd :bd<CR>
 nnoremap <Leader>bd :bd<CR>
 
@@ -165,6 +164,8 @@ vnoremap p ]p
 vnoremap p "_dp
 nnoremap <Leader>p "+p
 nnoremap Y y$
+nnoremap <M-Up> "qddk"qP
+nnoremap <M-Down> "qdd"qp
 
 "indent
 set expandtab
