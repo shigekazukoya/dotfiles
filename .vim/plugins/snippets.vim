@@ -5,4 +5,6 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-nnoremap <Leader>sni :NeoSnippetEdit<CR>
+nnoremap <Leader>sni <Cmd>NeoSnippetEdit<CR>
+
+

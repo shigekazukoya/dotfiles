@@ -1,8 +1,18 @@
 let mapleader="\<Space>"
-
-"system
 let $VIMRUNTIME="/usr/share/nvim/runtime"
 set runtimepath+=/usr/share/nvim/runtime
+
+"plugins
+source ~/dotfiles/.vim/plugins.vim
+set runtimepath+=~/dotfiles/.vim
+runtime! plugins/*.vim
+
+if has('nvim')
+  runtime! nvimplugins/*.vim
+  lua require('plugins')
+endif
+
+"system
 set clipboard&
 set clipboard^=unnamedplus
 set mouse=a
@@ -23,15 +33,15 @@ set wrapscan
 set showmatch
 set shortmess-=S
 set noexpandtab
-nnoremap <Esc><Esc> :noh<CR>
+nnoremap <Esc><Esc> <Cmd>noh<CR>
 nnoremap n nzz
 nnoremap N Nzz
 vnoremap n nzz
 vnoremap N Nzz
 
 "grep
-nnoremap tn :cn<CR>
-nnoremap tN :cp<CR>
+nnoremap tn <Cmd>cn<CR>
+nnoremap tN <Cmd>cp<CR>
 augroup QuickFix
 	autocmd!
 	autocmd QuickFixCmdPost *grep* cwindow
@@ -45,6 +55,7 @@ set number
 set visualbell t_vb=
 set noerrorbells
 
+nnoremap <C-k><C-j> zR
 nnoremap + <C-a>
 nnoremap - <C-x>
 
@@ -97,10 +108,8 @@ set directory=$HOME/.vim/swap
 set undofile
 set undodir=$HOME/.vim/undo_dir
 
-nnoremap < :bn<CR>zz
-nnoremap > :bp<CR>zz
-nnoremap <Leader>dd :bd<CR>
-nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader>dd <Cmd>bd<CR>
+nnoremap <Leader>bd <Cmd>bd<CR>
 
 if has('persistent_undo')
 	if !isdirectory(&undodir)
@@ -135,7 +144,7 @@ if has('vim_starting')
 endif
 
 "mode
-inoremap <silent> jj <ESC>:w<CR>
+inoremap <silent> jj <ESC><Cmd>w<CR>
 inoremap <C-j> <ESC>
 
 "terminal
@@ -160,7 +169,6 @@ vnoremap <Leader>e $h
 "yank
 nnoremap x "_x
 vnoremap x "_x
-vnoremap p ]p
 vnoremap p "_dp
 nnoremap <Leader>p "+p
 nnoremap Y y$
@@ -178,14 +186,8 @@ vnoremap <Leader>, <<
 vnoremap <Leader>. >>
 
 "utility
-nnoremap <Leader>vim :e $MYVIMRC<CR>
-nnoremap <Leader>so :source $MYVIMRC<CR>
+nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
+nnoremap <Leader>so <Cmd>source $MYVIMRC<CR>
 nnoremap <Leader>new :e<Space>
-nnoremap <Leader>ter :vertical terminal<CR>
+nnoremap <Leader>ter <Cmd>vertical terminal<CR>
 
-"plugins
-source ~/dotfiles/.vim/plugins.vim
-set runtimepath+=~/dotfiles/.vim
-runtime! plugins/*.vim
-
-lua require('plugins')

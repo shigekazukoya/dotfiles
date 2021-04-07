@@ -1,2 +1,2 @@
-nnoremap <C-k><C-u> :TComment<CR>
-vnoremap <C-k><C-u> :TComment<CR>
+nnoremap <C-k><C-u> <Cmd>TComment<CR>
+vnoremap <C-k><C-u> <Cmd>TComment<CR>
