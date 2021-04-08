@@ -31,5 +31,5 @@ Plug 'kien/ctrlp.vim'
 Plug 'kana/vim-niceblock'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+Plug 'qpkorr/vim-bufkill'
 call plug#end()
-

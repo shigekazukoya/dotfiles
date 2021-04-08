@@ -94,6 +94,7 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+
 "Tab
 nnoremap <silent> tt gt
 nnoremap <silent> tr gT
@@ -107,9 +108,6 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
 set undofile
 set undodir=$HOME/.vim/undo_dir
-
-nnoremap <Leader>dd <Cmd>bd<CR>
-nnoremap <Leader>bd <Cmd>bd<CR>
 
 if has('persistent_undo')
 	if !isdirectory(&undodir)
@@ -149,6 +147,7 @@ inoremap <C-j> <ESC>
 
 "terminal
 tnoremap <ESC> <C-\><C-n>
+tnoremap jj <C-\><C-n>
 
 "cursolMove
 nnoremap H ^
@@ -189,5 +188,3 @@ vnoremap <Leader>. >>
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so <Cmd>source $MYVIMRC<CR>
 nnoremap <Leader>new :e<Space>
-nnoremap <Leader>ter <Cmd>vertical terminal<CR>
-
