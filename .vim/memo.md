@@ -4,3 +4,6 @@ lualine
 barbar.vim
 
 
+fish
+tmux
+
