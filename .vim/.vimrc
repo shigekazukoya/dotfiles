@@ -1,6 +1,9 @@
 let mapleader="\<Space>"
-let $VIMRUNTIME="/usr/share/nvim/runtime"
-set runtimepath+=/usr/share/nvim/runtime
+if has('nvim')
+  let $VIMRUNTIME="/usr/share/nvim/runtime"
+  set runtimepath+=/usr/share/nvim/runtime
+endif
+
 
 "plugins
 source ~/dotfiles/.vim/plugins.vim
@@ -94,6 +97,8 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+"syntax
+syntax enable
 
 "Tab
 nnoremap <silent> tt gt
@@ -121,13 +126,6 @@ if !isdirectory(&directory)
 	call mkdir(&directory, "p")
 endif
 
-augroup vimrc-checktime
-	autocmd!
-	autocmd InsertEnter,WinEnter * checktime
-augroup END
-
-"syntax
-syntax enable
 
 "補完
 set infercase
