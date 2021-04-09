@@ -56,8 +56,8 @@ scriptencoding utf-8
 set number
 set visualbell t_vb=
 set noerrorbells
+set infercase
 
-nnoremap <C-k><C-j> zR
 nnoremap + <C-a>
 nnoremap - <C-x>
 
@@ -125,9 +125,10 @@ if !isdirectory(&directory)
 	call mkdir(&directory, "p")
 endif
 
+"barbar.vimで設定
+" nnoremap < <Cmd>bp<CR>
+" nnoremap > <Cmd>bn<CR>
 
-"補完
-set infercase
 
 "cursor
 set cursorline
