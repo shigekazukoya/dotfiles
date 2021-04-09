@@ -4,7 +4,6 @@ if has('nvim')
   set runtimepath+=/usr/share/nvim/runtime
 endif
 
-
 "plugins
 source ~/dotfiles/.vim/plugins.vim
 set runtimepath+=~/dotfiles/.vim
