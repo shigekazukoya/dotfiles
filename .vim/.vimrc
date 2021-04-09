@@ -129,7 +129,6 @@ endif
 " nnoremap < <Cmd>bp<CR>
 " nnoremap > <Cmd>bn<CR>
 
-
 "cursor
 set cursorline
 "ターミナル上のVimのカーソル用

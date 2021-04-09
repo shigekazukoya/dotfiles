@@ -18,5 +18,5 @@ augroup END
 
 nnoremap <Leader>dir <Cmd>NERDTreeFind %<CR>
 nnoremap <Leader>dvim <Cmd>NERDTree ~/dotfiles/.vim/plugins<CR>
-nnoremap <Leader>didd <Cmd>NERDClose<CR>
+nnoremap <Leader>didd <Cmd>NERDTreeClose<CR>
 nnoremap <Leader>dot <Cmd>NERDTree ~/dotfiles<CR>
