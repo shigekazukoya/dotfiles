@@ -7,10 +7,9 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
 let NERDTreeShowHidden=1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-autocmd BufWritePre * :FixWhitespace
 augroup NERD
 	au!
+  autocmd BufWritePre * :FixWhitespace
   autocmd VimEnter * nested if @% == ''| NERDTree |endif
 	autocmd VimEnter * wincmd p
   autocmd VimEnter * nested if @% == '' | e $MYVIMRC| endif

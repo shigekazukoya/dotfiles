@@ -1,6 +1,4 @@
 let s:lastiminsert = 0
-set iminsert=0
-set imsearch=0
 
 augroup Norml
 	autocmd!

@@ -1,1 +1,2 @@
-nnoremap <Leader>dd <Cmd>BD<CR>
+nnoremap <Leader>dd <Cmd>BW<CR>
+

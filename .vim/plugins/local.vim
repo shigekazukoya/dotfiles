@@ -1,5 +1,4 @@
-"TaskSchedulerからfishScriptを呼べなかったので一旦vimから呼ぶ形にしておく(windows)
-nnoremap <Leader>auto :!fish ~/dotfiles/autocommiter.fish<CR>
-
+" 実験場
 nnoremap <Leader>local :e ~/dotfiles/.vim/plugins/local.vim<CR>
 
+nnoremap <leader>aa A==============================<Esc>^30ld$

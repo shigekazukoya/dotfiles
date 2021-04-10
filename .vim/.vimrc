@@ -1,10 +1,6 @@
 let mapleader="\<Space>"
-if has('nvim')
-  let $VIMRUNTIME="/usr/share/nvim/runtime"
-  set runtimepath+=/usr/share/nvim/runtime
-endif
 
-"plugins
+"plugins======================
 source ~/dotfiles/.vim/plugins.vim
 set runtimepath+=~/dotfiles/.vim
 runtime! plugins/*.vim
@@ -14,7 +10,7 @@ if has('nvim')
   lua require('plugins')
 endif
 
-"system
+"system=======================
 set clipboard&
 set clipboard^=unnamedplus
 set mouse=a
@@ -26,31 +22,7 @@ if system('uname -a | grep Microsoft') != ''
 	augroup END
 endif
 
-"search
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-set wrapscan
-set showmatch
-set shortmess-=S
-set noexpandtab
-nnoremap <Esc><Esc> <Cmd>noh<CR>
-nnoremap n nzz
-nnoremap N Nzz
-vnoremap n nzz
-vnoremap N Nzz
-
-"grep
-nnoremap tn <Cmd>cn<CR>
-nnoremap tN <Cmd>cp<CR>
-augroup QuickFix
-	autocmd!
-	autocmd QuickFixCmdPost *grep* cwindow
-	autocmd filetype qf wincmd L
-augroup END
-
-"editor
+"editor=======================
 set encoding=utf-8
 scriptencoding utf-8
 set number
@@ -58,17 +30,40 @@ set visualbell t_vb=
 set noerrorbells
 set infercase
 
-nnoremap + <C-a>
-nnoremap - <C-x>
+"cursol=======================
+set cursorline
+"ターミナル上のVimのカーソル用
+if has('vim_starting')
+	let &t_SI .="\e[6 q"
+	let &t_EI .="\e[2 q"
+	let &t_SR .="\e[4 q"
+endif
 
-"statusLine
-set laststatus=2
+nnoremap H ^
+vnoremap H ^
+nnoremap L $
+vnoremap L g_
+nnoremap j gj
+vnoremap j gj
+nnoremap k gk
+vnoremap k gk
+nnoremap <silent>J 15j
+nnoremap <silent>K 15k
+nnoremap <Leader>a ^
+vnoremap <Leader>a ^
+nnoremap <Leader>e $
+vnoremap <Leader>e $h
 
-"IME
+"mode===================
 set iminsert=0
 set imsearch=0
 
-"window
+inoremap <silent> jj <ESC><Cmd>w<CR>
+inoremap <C-j> <ESC>
+tnoremap <ESC> <C-\><C-n>
+tnoremap jj <C-\><C-n>
+
+"window=======================
 set splitbelow
 set splitright
 
@@ -83,8 +78,38 @@ nnoremap <Leader>L <C-w>L
 nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
 
-"Command
+"buffer=======================
+set hidden
+set autoread
+set backup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/swap
+set undofile
+set undodir=$HOME/.vim/undo_dir
+
+if !isdirectory(&backupdir)
+	call mkdir(&backupdir, "p")
+endif
+if !isdirectory(&directory)
+	call mkdir(&directory, "p")
+endif
+if has('persistent_undo')
+	if !isdirectory(&undodir)
+		call mkdir(&undodir, "p")
+	endif
+endif
+
+"barbar.vimで設定
+" nnoremap < <Cmd>bp<CR>
+" nnoremap > <Cmd>bn<CR>
+
+"Tab==========================
+nnoremap <silent> tt gt
+nnoremap <silent> tr gT
+
+"command======================
 set wildmenu
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 set showcmd
 set history=10000
 
@@ -96,73 +121,32 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-"syntax
-syntax enable
+"search=======================
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set wrapscan
+set showmatch
+set shortmess-=S
+set noexpandtab
 
-"Tab
-nnoremap <silent> tt gt
-nnoremap <silent> tr gT
-nnoremap te :tab new<Space>
+nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
 
-"buffer
-set hidden
-set autoread
-set backup
-set backupdir=$HOME/.vim/backup
-set directory=$HOME/.vim/swap
-set undofile
-set undodir=$HOME/.vim/undo_dir
+"grep=========================
+nnoremap tn <Cmd>cn<CR>
+nnoremap tN <Cmd>cp<CR>
+augroup QuickFix
+	autocmd!
+	autocmd QuickFixCmdPost *grep* cwindow
+	autocmd filetype qf wincmd L
+augroup END
 
-if has('persistent_undo')
-	if !isdirectory(&undodir)
-		call mkdir(&undodir, "p")
-	endif
-endif
-if !isdirectory(&backupdir)
-	call mkdir(&backupdir, "p")
-endif
-if !isdirectory(&directory)
-	call mkdir(&directory, "p")
-endif
-
-"barbar.vimで設定
-" nnoremap < <Cmd>bp<CR>
-" nnoremap > <Cmd>bn<CR>
-
-"cursor
-set cursorline
-"ターミナル上のVimのカーソル用
-if has('vim_starting')
-	let &t_SI .="\e[6 q"
-	let &t_EI .="\e[2 q"
-	let &t_SR .="\e[4 q"
-endif
-
-"mode
-inoremap <silent> jj <ESC><Cmd>w<CR>
-inoremap <C-j> <ESC>
-
-"terminal
-tnoremap <ESC> <C-\><C-n>
-tnoremap jj <C-\><C-n>
-
-"cursolMove
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L g_
-nnoremap k gk
-nnoremap j gj
-vnoremap k gk
-vnoremap j gj
-nnoremap <silent>J 15j
-nnoremap <silent>K 15k
-nnoremap <Leader>a ^
-vnoremap <Leader>a ^
-nnoremap <Leader>e $
-vnoremap <Leader>e $h
-
-"yank
+"yank=========================
 nnoremap x "_x
 vnoremap x "_x
 vnoremap p "_dp
@@ -171,17 +155,25 @@ nnoremap Y y$
 nnoremap <M-Up> "qddk"qP
 nnoremap <M-Down> "qdd"qp
 
-"indent
+"indent=======================
 set expandtab
 set autoindent
 set ts=2
 set shiftwidth=2
+
 nnoremap <Leader>, <}
 nnoremap <Leader>. >}
 vnoremap <Leader>, <<
 vnoremap <Leader>. >>
 
-"utility
+"syntax=======================
+syntax enable
+
+"statusLine===================
+set laststatus=2
+
+"utility======================
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
-nnoremap <Leader>so <Cmd>source $MYVIMRC<CR>
-nnoremap <Leader>new :e<Space>
+nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
+nnoremap + <C-a>
+nnoremap - <C-x>
