@@ -177,3 +177,4 @@ nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
+/home/shige/dotfiles/.vim/plugins/textObj.vim

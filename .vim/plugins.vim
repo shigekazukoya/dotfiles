@@ -31,6 +31,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'kana/vim-niceblock'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'qpkorr/vim-bufkill'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
 
 if has('nvim')
   Plug 'romgrk/barbar.nvim'
