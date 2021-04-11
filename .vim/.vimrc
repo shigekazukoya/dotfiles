@@ -131,7 +131,7 @@ set showmatch
 set shortmess-=S
 set noexpandtab
 
-nnoremap <Esc><Esc> <Cmd>nohlsearch<CR>
+nnoremap <silent><C-l> <C-l><Cmd>nohlsearch<CR>
 nnoremap n nzz
 nnoremap N Nzz
 vnoremap n nzz

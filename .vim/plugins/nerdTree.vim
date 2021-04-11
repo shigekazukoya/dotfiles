@@ -12,7 +12,6 @@ augroup NERD
   autocmd BufWritePre * :FixWhitespace
   autocmd VimEnter * nested if @% == ''| NERDTree |endif
 	autocmd VimEnter * wincmd p
-  autocmd VimEnter * nested if @% == '' | e $MYVIMRC| endif
 augroup END
 
 nnoremap <Leader>dir <Cmd>NERDTreeFind %<CR>
