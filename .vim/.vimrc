@@ -146,7 +146,7 @@ augroup QuickFix
 	autocmd filetype qf wincmd L
 augroup END
 
-"yank=========================
+"ank=========================
 nnoremap x "_x
 vnoremap x "_x
 vnoremap p "_dp
@@ -177,4 +177,3 @@ nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
-/home/shige/dotfiles/.vim/plugins/textObj.vim

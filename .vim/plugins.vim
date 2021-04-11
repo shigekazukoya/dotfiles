@@ -34,6 +34,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
+Plug 'tpope/vim-surround'
 
 if has('nvim')
   Plug 'romgrk/barbar.nvim'
