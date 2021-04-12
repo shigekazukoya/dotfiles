@@ -33,7 +33,8 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
-Plug 'tyru/open-brower.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'masukomi/vim-markdown-folding'
 
 if has('nvim')
   Plug 'romgrk/barbar.nvim'

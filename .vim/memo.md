@@ -12,7 +12,8 @@ tmux
 awk
 tmuxでフォルダとファイルを固定できるので、それで毎回保持しておけば、buidlを楽にすることができる
 
-sharepointととの兼ね合いについても考える
+sharepointとの兼ね合いについても考える
 
 # problem
 openbrowserがうまく機能しない
+
