@@ -1,4 +1,3 @@
-
 lua <<EOF
 require('lualine').setup{
   options = {

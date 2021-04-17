@@ -6,7 +6,7 @@ set runtimepath+=~/dotfiles/.vim
 runtime! plugins/*.vim
 
 if has('nvim')
-  runtime! nvimplugins/*.nvim
+  runtime! nvimplugins/*.vim
   lua require('plugins')
 endif
 

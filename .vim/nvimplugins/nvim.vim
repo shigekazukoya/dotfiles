@@ -1,7 +1,3 @@
-augroup filetypedetect
-  au BufNewFile,BufRead *.nvim setf vim
-augroup END
-
 "terminal=====================
 command! -nargs=* VT vsplit | terminal <args>
 nnoremap <Leader>ter <Cmd>VT<CR>

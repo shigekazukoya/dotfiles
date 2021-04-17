@@ -16,3 +16,9 @@ sharepointとの兼ね合いについても考える
 
 # problem
 openbrowserがうまく機能しない
+luaのインデントの設定
+telescopeの設定
+
+# install
+bat
+  sudo apt install bat
