@@ -6,7 +6,7 @@ set runtimepath+=~/dotfiles/.vim
 runtime! plugins/*.vim
 
 if has('nvim')
-  runtime! nvimplugins/*.vim
+  runtime! nvimplugins/*.nvim
   lua require('plugins')
 endif
 
@@ -16,10 +16,10 @@ set clipboard^=unnamedplus
 set mouse=a
 
 if system('uname -a | grep Microsoft') != ''
-	augroup myYank
-		autocmd!
-		autocmd TextYankPost * :call system('clip.exe', @")
-	augroup END
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
 endif
 
 "editor=======================
@@ -29,6 +29,7 @@ set number
 set visualbell t_vb=
 set noerrorbells
 set infercase
+filetype on
 
 "cursol=======================
 set cursorline
@@ -53,6 +54,12 @@ nnoremap <Leader>a ^
 vnoremap <Leader>a ^
 nnoremap <Leader>e $
 vnoremap <Leader>e $h
+
+"カーソル位置の記憶
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
 
 "mode===================
 set iminsert=0
@@ -156,6 +163,7 @@ nnoremap <M-Up> "qddk"qP
 nnoremap <M-Down> "qdd"qp
 
 "indent=======================
+set breakindent
 set expandtab
 set autoindent
 set ts=2

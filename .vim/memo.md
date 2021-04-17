@@ -16,4 +16,3 @@ sharepointとの兼ね合いについても考える
 
 # problem
 openbrowserがうまく機能しない
-

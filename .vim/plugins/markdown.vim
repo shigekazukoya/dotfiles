@@ -19,3 +19,5 @@ nnoremap t2 :s/#\+<Space>//e<CR>I##<Space><Esc>:noh<CR>w
 nnoremap t3 :s/#\+<Space>//e<CR>I###<Space><Esc>:noh<CR>w
 nnoremap t4 :s/#\+<Space>//e<CR>I####<Space><Esc>:noh<CR>w
 
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview

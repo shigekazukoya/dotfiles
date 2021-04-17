@@ -38,6 +38,10 @@ Plug 'masukomi/vim-markdown-folding'
 
 if has('nvim')
   Plug 'romgrk/barbar.nvim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
 endif
 
 call plug#end()
