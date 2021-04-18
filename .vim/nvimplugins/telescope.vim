@@ -8,7 +8,25 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fk <cmd>Telescope commands<cr>
 nnoremap <leader>fm <cmd>Telescope keymaps<cr>
 
-autocmd User TelescopePreviewerLoaded setlocal wrap
+function Set_telescope()
+  highlight TelescopeSelection      guifg=#4883d5 gui=bold " selected item
+  highlight TelescopeSelectionCaret guifg=#CC241D " selection caret
+  highlight TelescopeMultiSelection guifg=#928374 " multisections
+  highlight TelescopeNormal         guibg=#00000  " floating windows created by telescope.
+
+  " Border highlight groups.
+  highlight TelescopeBorder         guifg=#ffffff
+  highlight TelescopePromptBorder   guifg=#ffffff
+  highlight TelescopeResultsBorder  guifg=#ffffff
+  highlight TelescopePreviewBorder  guifg=#ffffff
+
+  " Used for highlighting characters that you match.
+  highlight TelescopeMatching       guifg=#ff368f
+
+  " Used for the prompt prefix
+  highlight TelescopePromptPrefix   guifg=red
+endfunc
+
 lua <<EOF
 require('telescope').setup{
   defaults = {
@@ -58,3 +76,4 @@ require('telescope').setup{
 
   }
 }
+EOF

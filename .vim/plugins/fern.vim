@@ -2,6 +2,8 @@
  let g:fern#default_hidden=1
 
  nnoremap <Leader>dir <Cmd>Fern . -reveal=% -drawer<CR>
+ nnoremap <Leader>dvim <Cmd>Fern ~/dotfiles/.vim/plugins/ -drawer<CR>
+ nnoremap <Leader>nvim <Cmd>Fern ~/dotfiles/.vim/nvimplugins/ -drawer<CR>
 
 function! s:init_fern() abort
   echo "This function is called ON a fern buffer WHEN initialized"

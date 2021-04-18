@@ -10,7 +10,7 @@ tmux
 
 # shell
 awk
-tmuxでフォルダとファイルを固定できるので、それで毎回保持しておけば、buidlを楽にすることができる
+tmuxでフォルダとファイルを固定できるので、それで毎回保持しておけば、buildを楽にすることができる
 
 sharepointとの兼ね合いについても考える
 
@@ -20,8 +20,16 @@ luaのインデントの設定
 telescopeの設定
 
 # install
+nvim
+python3
+ripgrep
+bat
+bd-find
+fzf
+
 bat
   sudo apt install bat
+  sudo apt install bd-find
 
 ripgrep
   # 依存ファイルのインストール（基本デフォルトのまま進んでOK）
@@ -38,3 +46,11 @@ ripgrep
 
 
 
+# coc
+coc-vimlsp
+coc-fish
+coc-lua
+coc-omnisharp
+coc-python
+coc-xml
+coc-json

@@ -1,6 +1,6 @@
-let mapleader="\<Space>"
+let g:mapleader="\<Space>"
 
-"plugins======================
+"plugins==========================================
 source ~/dotfiles/.vim/plugins.vim
 set runtimepath+=~/dotfiles/.vim
 runtime! plugins/*.vim
@@ -10,7 +10,15 @@ if has('nvim')
   lua require('plugins')
 endif
 
-"system=======================
+"color============================================
+source ~/dotfiles/.vim/color.vim
+colorscheme nord
+
+set termguicolors
+let &t_8f = "\<esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<esc>[48;2;%lu;%lu;%lum"
+
+"system===========================================
 set clipboard&
 set clipboard^=unnamedplus
 set mouse=a
@@ -22,12 +30,7 @@ if system('uname -a | grep Microsoft') != ''
   augroup END
 endif
 
-
-"color
-colorscheme nord
-let g:rainbow_active =1
-
-"editor=======================
+"editor===========================================
 set encoding=utf-8
 scriptencoding utf-8
 set number
@@ -36,7 +39,7 @@ set noerrorbells
 set infercase
 filetype on
 
-"cursol=======================
+"cursol===========================================
 set cursorline
 "ターミナル上のVimのカーソル用
 if has('vim_starting')
@@ -66,7 +69,7 @@ augroup vimrcEx
   \ exe "normal g`\"" | endif
 augroup END
 
-"mode===================
+"mode=============================================
 set iminsert=0
 set imsearch=0
 
@@ -75,7 +78,7 @@ inoremap <C-j> <ESC>
 tnoremap <ESC> <C-\><C-n>
 tnoremap jj <C-\><C-n>
 
-"window=======================
+"window===========================================
 set splitbelow
 set splitright
 
@@ -91,7 +94,7 @@ nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
 
 
-"buffer=======================
+"buffer===========================================
 set hidden
 set autoread
 set autochdir
@@ -117,11 +120,11 @@ endif
 " nnoremap < <Cmd>bp<CR>
 " nnoremap > <Cmd>bn<CR>
 
-"Tab==========================
+"Tab==============================================
 nnoremap <silent> tt gt
 nnoremap <silent> tr gT
 
-"command======================
+"command==========================================
 set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 set showcmd
@@ -135,7 +138,7 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-"search=======================
+"search===========================================
 set ignorecase
 set smartcase
 set incsearch
@@ -151,7 +154,7 @@ nnoremap N Nzz
 vnoremap n nzz
 vnoremap N Nzz
 
-"grep=========================
+"grep=============================================
 nnoremap tn <Cmd>cn<CR>
 nnoremap tN <Cmd>cp<CR>
 augroup QuickFix
@@ -160,7 +163,7 @@ augroup QuickFix
 	autocmd filetype qf wincmd L
 augroup END
 
-"ank=========================
+"ank==============================================
 nnoremap x "_x
 vnoremap x "_x
 vnoremap p "_dp
@@ -169,7 +172,7 @@ nnoremap Y y$
 nnoremap <M-Up> "qddk"qP
 nnoremap <M-Down> "qdd"qp
 
-"indent=======================
+"indent===========================================
 set breakindent
 set expandtab
 set autoindent
@@ -181,20 +184,15 @@ nnoremap <Leader>. >}
 vnoremap <Leader>, <<
 vnoremap <Leader>. >>
 
-"syntax=======================
+"syntax===========================================
 syntax enable
 
-"statusLine===================
+"statusLine=======================================
 set laststatus=2
 
-"utility======================
+"utility==========================================
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
-
-"color========================
-set termguicolors
-let &t_8f = "\<esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<esc>[48;2;%lu;%lu;%lum"
 
