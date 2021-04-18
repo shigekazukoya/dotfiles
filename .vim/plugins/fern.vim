@@ -1,13 +1,14 @@
- let g:fern#renderer="nerdfont"
- let g:fern#default_hidden=1
+let g:fern#renderer="nerdfont"
+let g:fern#default_hidden=1
 
- nnoremap <Leader>dir <Cmd>Fern . -reveal=% -drawer<CR>
- nnoremap <Leader>dvim <Cmd>Fern ~/dotfiles/.vim/plugins/ -drawer<CR>
- nnoremap <Leader>nvim <Cmd>Fern ~/dotfiles/.vim/nvimplugins/ -drawer<CR>
+nnoremap <Leader>dir <Cmd>Fern . -reveal=% -drawer<CR>
+nnoremap <Leader>dvim <Cmd>Fern ~/dotfiles/.vim/plugins/ -drawer<CR>
+nnoremap <Leader>nvim <Cmd>Fern ~/dotfiles/.vim/nvimplugins/ -drawer<CR>
 
 function! s:init_fern() abort
   echo "This function is called ON a fern buffer WHEN initialized"
   nmap <buffer> o <Plug>(fern-action-open:edit)
+  nmap <buffer> v <Plug>(fern-action-mark)
   nmap <buffer> t <Plug>(fern-action-open:tabedit)
   nmap <buffer> i <Plug>(fern-action-open:split)
   nmap <buffer> s <Plug>(fern-action-open:vsplit)
@@ -17,10 +18,12 @@ function! s:init_fern() abort
   nmap <buffer> K 5k
   nmap <buffer> J 5j
   nmap <buffer> dd <Plug>(fern-action-remove)
+  nmap <buffer> r <Plug>(fern-action-rename)
   nmap <buffer> qq <Cmd>quit<CR>
   nmap <buffer><nowait> l <Plug>(fern-my-expand-or-enter)
   nmap <buffer><nowait> h <Plug>(fern-my-collapse-or-leave)
   nmap <buffer> u <Plug>(fern-action-leave)\ <Plug>(fern-open-or-expand)
+
 
   nmap <buffer><expr>
         \ <Plug>(fern-my-expand-or-enter)

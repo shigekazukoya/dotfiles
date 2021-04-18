@@ -1,9 +1,9 @@
 nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "-i", "--files", "-g", "!.git" } }<CR>
+nnoremap <Leader>fh <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "-i", "--files", "-g", "!.git", "--hidden" } }<CR>
 nnoremap <Leader>fd <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/dotfiles/.vim/", find_command = {"rg", "--hidden"} }<CR>
 
 noremap th <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fk <cmd>Telescope commands<cr>
 nnoremap <leader>fm <cmd>Telescope keymaps<cr>
@@ -70,7 +70,7 @@ require('telescope').setup{
     color_devicons = false,
     use_less = true,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+    file_previewer = require'telescope.previewers'..new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 

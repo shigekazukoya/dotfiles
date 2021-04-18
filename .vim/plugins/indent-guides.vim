@@ -5,3 +5,4 @@ function Set_indent_guides()
   highlight IndentGuidesOdd guibg=#3b404a
   highlight IndentGuidesEven guibg=#2f3a4a
 endfunc
+

@@ -44,8 +44,6 @@ ripgrep
   # ripgrepのインストール
   cargo install ripgrep
 
-
-
 # coc
 coc-vimlsp
 coc-fish
@@ -54,3 +52,6 @@ coc-omnisharp
 coc-python
 coc-xml
 coc-json
+coc-lists
+
+

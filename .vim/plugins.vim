@@ -28,9 +28,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'kana/vim-niceblock'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 
@@ -42,6 +39,7 @@ if has('nvim')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'fannheyward/telescope-coc.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'hoob3rt/lualine.nvim'
 endif
