@@ -22,3 +22,19 @@ telescopeの設定
 # install
 bat
   sudo apt install bat
+
+ripgrep
+  # 依存ファイルのインストール（基本デフォルトのまま進んでOK）
+  curl https://sh.rustup.rs -sSf | sh
+  sudo apt-get install debhelper
+  sudo apt-get install devscripts
+  sudo apt-get install quilt
+
+  # cargoのパスを通す
+  source $HOME/.cargo/env
+
+  # ripgrepのインストール
+  cargo install ripgrep
+
+
+

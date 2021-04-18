@@ -1,13 +1,12 @@
-noremap <leader>ff <cmd>Telescope find_files<cr>
-noremap th <cmd>Telescope oldfiles<cr>
-noremap tm <cmd>Telescope keymaps<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>
-nnoremap <Leader>fo :lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({}))<cr>
+nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "-i", "--files", "-g", "!.git" } }<CR>
+nnoremap <Leader>fd <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/dotfiles/.vim/", find_command = {"rg", "--hidden"} }<CR>
 
-nnoremap <leader>fg :lua require('telescope.builtin').live_grep({ prompt_prefix=🔍 })<CR>
+noremap th <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fk <cmd>Telescope commands<cr>
+nnoremap <leader>fm <cmd>Telescope keymaps<cr>
 
 autocmd User TelescopePreviewerLoaded setlocal wrap
 lua <<EOF

@@ -1,4 +1,3 @@
-
 set signcolumn=yes
 set updatetime=1000
 

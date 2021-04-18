@@ -22,6 +22,11 @@ if system('uname -a | grep Microsoft') != ''
   augroup END
 endif
 
+
+"color
+colorscheme nord
+let g:rainbow_active =1
+
 "editor=======================
 set encoding=utf-8
 scriptencoding utf-8
@@ -85,9 +90,11 @@ nnoremap <Leader>L <C-w>L
 nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
 
+
 "buffer=======================
 set hidden
 set autoread
+set autochdir
 set backup
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
@@ -185,3 +192,9 @@ nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
 nnoremap + <C-a>
 nnoremap - <C-x>
+
+"color========================
+set termguicolors
+let &t_8f = "\<esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<esc>[48;2;%lu;%lu;%lum"
+

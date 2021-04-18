@@ -9,7 +9,7 @@ require('lualine').setup{
   sections = {
     lualine_a = { {'mode', upper = true} },
     lualine_b = { {'branch', icon = ''} },
-    lualine_c = { {'filename', file_status = true} },
+    lualine_c = { {'filename', file_status = true, full_path= true} },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location'  },

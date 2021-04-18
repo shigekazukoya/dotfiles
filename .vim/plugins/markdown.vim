@@ -2,7 +2,6 @@
 let g:vim_markdown_folding_disabled=1
 
 " masukomi/vim-markdown-folding
-set foldlevel=1
 set nocompatible
 
 augroup NestedMarkdownFolds
@@ -19,5 +18,9 @@ nnoremap t2 :s/#\+<Space>//e<CR>I##<Space><Esc>:noh<CR>w
 nnoremap t3 :s/#\+<Space>//e<CR>I###<Space><Esc>:noh<CR>w
 nnoremap t4 :s/#\+<Space>//e<CR>I####<Space><Esc>:noh<CR>w
 
-" au BufWinLeave * mkview
-" au BufWinEnter * silent loadview
+augroup folding
+  autocmd!
+  autocmd BufWritePost *.md if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+  autocmd BufRead *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+augroup END
+set viewoptions-=options
