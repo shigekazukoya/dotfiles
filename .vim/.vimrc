@@ -1,4 +1,4 @@
-let g:mapleader="\<Space>"
+let mapleader="\<Space>"
 
 "plugins==========================================
 source ~/dotfiles/.vim/plugins.vim
@@ -120,6 +120,13 @@ endif
 " nnoremap < <Cmd>bp<CR>
 " nnoremap > <Cmd>bn<CR>
 
+augroup createFile
+  autocmd! BufWritePre *
+        \if !isdirectory(expand("%:p:h")) |
+        \  call mkdir(expand("%:p:h"), "p") |
+        \endif
+augroup END
+
 "Tab==============================================
 nnoremap <silent> tt gt
 nnoremap <silent> tr gT
@@ -133,6 +140,7 @@ set history=10000
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
 nnoremap ! :!
+nnoremap <CR> :
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -163,7 +171,7 @@ augroup QuickFix
 	autocmd filetype qf wincmd L
 augroup END
 
-"ank==============================================
+"yank=============================================
 nnoremap x "_x
 vnoremap x "_x
 vnoremap p "_dp
@@ -171,6 +179,8 @@ nnoremap <Leader>p "+p
 nnoremap Y y$
 nnoremap <M-Up> "qddk"qP
 nnoremap <M-Down> "qdd"qp
+vnoremap <M-Up> "qdk"qPgv
+vnoremap <M-Down> "qd"qpgv
 
 "indent===========================================
 set breakindent
@@ -191,8 +201,11 @@ syntax enable
 set laststatus=2
 
 "utility==========================================
-nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
-nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
+nnoremap <Leader>cd :cd<Space>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+"settings-Utility
+nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
+nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
+nnoremap <leader>hi <Cmd>echo synIDattr(synID(line("."), col("."), 1), "name")<CR>

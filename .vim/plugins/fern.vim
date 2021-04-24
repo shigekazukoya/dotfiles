@@ -14,7 +14,6 @@ function! s:init_fern() abort
   nmap <buffer> s <Plug>(fern-action-open:vsplit)
   nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
   nmap <buffer> ma <Plug>(fern-action-new-path)
-  nmap <buffer> P gg
   nmap <buffer> K 5k
   nmap <buffer> J 5j
   nmap <buffer> dd <Plug>(fern-action-remove)
@@ -22,8 +21,7 @@ function! s:init_fern() abort
   nmap <buffer> qq <Cmd>quit<CR>
   nmap <buffer><nowait> l <Plug>(fern-my-expand-or-enter)
   nmap <buffer><nowait> h <Plug>(fern-my-collapse-or-leave)
-  nmap <buffer> u <Plug>(fern-action-leave)\ <Plug>(fern-open-or-expand)
-
+  nmap <buffer> u <Plug>(fern-action-leave)
 
   nmap <buffer><expr>
         \ <Plug>(fern-my-expand-or-enter)
@@ -43,11 +41,12 @@ augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
-augroup opentree
-	au!
-  autocmd vimenter * nested if @% == ''| Fern . -reveal=% -drawer |endif
-  " autocmd FileType fern call s:fern_preview_init()
-augroup END
+
+" augroup opentree
+" 	au!
+"   " autocmd vimenter * nested if @% == ''| Fern . -reveal=% -drawer |endif
+"   " autocmd FileType fern call s:fern_preview_init()
+" augroup END
 
 function! s:fern_preview_init() abort
   nmap <buffer><expr>

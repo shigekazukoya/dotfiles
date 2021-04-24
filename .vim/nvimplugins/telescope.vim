@@ -1,12 +1,9 @@
-nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "-i", "--files", "-g", "!.git" } }<CR>
-nnoremap <Leader>fh <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "-i", "--files", "-g", "!.git", "--hidden" } }<CR>
-nnoremap <Leader>fd <cmd>lua require'telescope.builtin'.live_grep{ cwd = "~/dotfiles/.vim/", find_command = {"rg", "--hidden"} }<CR>
-
 noremap th <cmd>Telescope oldfiles<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fk <cmd>Telescope commands<cr>
-nnoremap <leader>fm <cmd>Telescope keymaps<cr>
+nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
+nnoremap <Leader>grep <cmd>lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}<CR>
+nnoremap <Leader>dot <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/dotfiles/", find_command = {"rg","--files", "--hidden", "--glob=!.git/*"}}<CR>
+nnoremap <leader>buf <cmd>Telescope buffers<cr>
+nnoremap <leader><C-r> <cmd>Telescope buffers<cr>
 
 function Set_telescope()
   highlight TelescopeSelection      guifg=#4883d5 gui=bold " selected item

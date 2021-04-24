@@ -24,25 +24,8 @@ nvim
 python3
 ripgrep
 bat
-bd-find
+fd-find
 fzf
-
-bat
-  sudo apt install bat
-  sudo apt install bd-find
-
-ripgrep
-  # 依存ファイルのインストール（基本デフォルトのまま進んでOK）
-  curl https://sh.rustup.rs -sSf | sh
-  sudo apt-get install debhelper
-  sudo apt-get install devscripts
-  sudo apt-get install quilt
-
-  # cargoのパスを通す
-  source $HOME/.cargo/env
-
-  # ripgrepのインストール
-  cargo install ripgrep
 
 # coc
 coc-vimlsp
@@ -54,4 +37,5 @@ coc-xml
 coc-json
 coc-lists
 
-
+# 面白そう
+[GitHub - zellij-org/zellij: A terminal workspace with batteries included](https://github.com/zellij-org/zellij)
