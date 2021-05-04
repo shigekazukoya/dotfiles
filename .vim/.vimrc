@@ -14,10 +14,6 @@ endif
 source ~/dotfiles/.vim/color.vim
 colorscheme nord
 
-set termguicolors
-let &t_8f = "\<esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<esc>[48;2;%lu;%lu;%lum"
-
 "system===========================================
 set clipboard&
 set clipboard^=unnamedplus
@@ -34,6 +30,7 @@ endif
 set encoding=utf-8
 scriptencoding utf-8
 set number
+set relativenumber
 set visualbell t_vb=
 set noerrorbells
 set infercase

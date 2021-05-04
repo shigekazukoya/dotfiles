@@ -1,3 +1,7 @@
+set termguicolors
+let &t_8f = "\<esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<esc>[48;2;%lu;%lu;%lum"
+
 augroup CustomColorHighlight
   autocmd!
   autocmd ColorScheme * call s:set_color()

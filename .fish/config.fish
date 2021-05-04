@@ -2,6 +2,10 @@ abbr -a fr fzf_runcher
 set zenhan /mnt/c/Apps/zenhan/bin64/zenhan.exe
 set -x LS_COLORS 'ow=01;36'
 
+if status is-interactive
+  cd $HOME
+end
+
 function fzf_runcher
 set a (fzf)
 set b (wslpath -w $a)

@@ -1,0 +1,14 @@
+snippet     if
+abbr        if endif
+        if ${1:condition}
+                ${0}
+        endif
+
+snippet u
+        #!/usr/bin/env perl
+        use 5.10.0;
+        use strict;
+        use warnings;
+
+snippet searchhi
+  echo synIDattr(synID(line("."), col("."), 1), "name")
