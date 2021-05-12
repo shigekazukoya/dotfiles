@@ -1,8 +1,9 @@
+" wslのシンボリックリンクとの相性がよくない
 noremap th <cmd>Telescope oldfiles<cr>
 nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <Leader>grep <cmd>lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}<CR>
 nnoremap <Leader>dot <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/dotfiles/", find_command = {"rg","--files", "--hidden", "--glob=!.git/*"}}<CR>
-nnoremap <leader>buf <cmd>Telescope buffers<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader><C-r> <cmd>Telescope buffers<cr>
 
 function Set_telescope()

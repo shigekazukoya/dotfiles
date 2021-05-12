@@ -42,6 +42,8 @@ if has('nvim')
   Plug 'fannheyward/telescope-coc.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'hoob3rt/lualine.nvim'
+  Plug 'folke/which-key.nvim'
+  Plug 'kevinhwang91/nvim-bqf'
 endif
 
 call plug#end()

@@ -90,12 +90,12 @@ nnoremap <Leader>L <C-w>L
 nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
 
-
 "buffer===========================================
 set hidden
 set autoread
 set autochdir
-set backup
+set nobackup
+set noswapfile
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
 set undofile
@@ -143,6 +143,14 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+
 "search===========================================
 set ignorecase
 set smartcase
@@ -160,8 +168,8 @@ vnoremap n nzz
 vnoremap N Nzz
 
 "grep=============================================
-nnoremap tn <Cmd>cn<CR>
-nnoremap tN <Cmd>cp<CR>
+nnoremap tn :cn<CR>
+nnoremap tp :cp<CR>
 augroup QuickFix
 	autocmd!
 	autocmd QuickFixCmdPost *grep* cwindow
@@ -174,10 +182,10 @@ vnoremap x "_x
 vnoremap p "_dp
 nnoremap <Leader>p "+p
 nnoremap Y y$
-nnoremap <M-Up> "qddk"qP
+nnoremap <M-Up> "qdd<Up>"qP
 nnoremap <M-Down> "qdd"qp
-vnoremap <M-Up> "qdk"qPgv
-vnoremap <M-Down> "qd"qpgv
+vnoremap <M-Up> "qx<Up>"qP`[V`]
+vnoremap <M-Down> "qx"qp`[V`]
 
 "indent===========================================
 set breakindent
@@ -201,6 +209,8 @@ set laststatus=2
 nnoremap <Leader>cd :cd<Space>
 nnoremap + <C-a>
 nnoremap - <C-x>
+inoremap <C-t> <Esc><Left>"qx"qpa
+nnoremap <C-CR> mzo<ESC>`z
 
 "settings-Utility
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
