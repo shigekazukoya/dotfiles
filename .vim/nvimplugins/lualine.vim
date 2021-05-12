@@ -1,7 +1,7 @@
 lua <<EOF
 require('lualine').setup{
   options = {
-    color = 'nord',
+    theme = 'nord',
     section_separators = {'', ''},
     component_separators = {'', ''},
     icons_enabled = true,
