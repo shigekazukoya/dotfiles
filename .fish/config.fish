@@ -1,5 +1,6 @@
 set zenhan /mnt/c/Apps/zenhan/bin64/zenhan.exe
 set -x LS_COLORS 'ow=01;36'
+set -U FZF_LEGACY_KEYBINDINGS 0
 
 function fzf_runcher
 set a (fzf)
