@@ -14,12 +14,17 @@ let g:lightline = {
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
-nnoremap <Leader>lis :<C-u>CocList<CR>
-nnoremap <Leader>ac :<C-u>call CocAction('doHover')<CR>
-nmap <silent> <Leader>b <Plug>(coc-definition)
-nmap <silent> <Leader>rf <Plug>(coc-references)
-nmap <silent> <Leader>rn <Plug>(coc-rename)
-nmap <silent> <Leader>fm <Plug>(coc-format)
+nmap <leader>cl :<C-u>CocList<CR>
+nmap <leader>ca :<C-u>call CocAction('doHover')<CR>
+nmap <leader>cb <Plug>(coc-definition)
+nmap <leaer>cr <Plug>(coc-references)
+nmap <leader>ci <Plug>(coc-implementation)
+nmap <leader>cn <Plug>(coc-rename)
+nmap <leader>cf <Plug>(coc-format)
+nmap <leader>cq <Plug>(coc-fix-current)
+nmap <leader>cc <Plug>(coc-codeaction)
+nmap <leader>c, <Plug>(coc-diagnostic-prev)
+nmap <leader>c. <Plug>(coc-diagnostic-next)
 
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)

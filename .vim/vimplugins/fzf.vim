@@ -1,0 +1,2 @@
+
+nnoremap th :History<CR>

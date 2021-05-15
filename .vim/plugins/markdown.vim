@@ -1,13 +1,16 @@
+set foldlevelstart=2
+
 "plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled=1
+"vim-markdownのfoldを使用しない
+" let g:vim_markdown_folding_disabled=0
 
 " masukomi/vim-markdown-folding
 set nocompatible
 
 augroup NestedMarkdownFolds
   autocmd!
-  autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
   filetype plugin indent on
+  " autocmd FileType markdown set foldexpr=NesteMarkdownFolds()
 augroup END
 
 nnoremap <C-k><C-j> zR
@@ -20,7 +23,7 @@ nnoremap t4 :s/#\+<Space>//e<CR>I####<Space><Esc>:noh<CR>w
 
 augroup folding
   autocmd!
-  autocmd BufWritePost *.md if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-  autocmd BufRead *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+  autocmd BufWritePost,BufWinLeave,BufLeave *.md if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+  autocmd BufEnter,BufWinEnter *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 augroup END
 set viewoptions-=options

@@ -13,7 +13,10 @@ function s:set_color()
   highlight Vimstring guifg=#e5b49c
   highlight luastring guifg=#e5b49c
 
-  call Set_color_barbar()
-  call Set_telescope()
-  call Set_indent_guides()
+  if has('nvim')
+    call Set_color_barbar()
+    call Set_telescope()
+    call Set_indent_guides()
+  endif
+
 endfunc

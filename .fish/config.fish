@@ -1,4 +1,8 @@
 set zenhan /mnt/c/Apps/zenhan/bin64/zenhan.exe
+set EDITOR nvim
+
+export DISPLAY=(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+
 set -x LS_COLORS 'ow=01;36'
 set -U FZF_LEGACY_KEYBINDINGS 0
 
@@ -24,4 +28,16 @@ end
 function c
 cd /mnt/c/
 end
+
+function ranger-cd
+    set dir (mktemp -t ranger_cd.XXX)
+    ranger --choosedir=$dir
+    cd (cat $dir) $argv
+    rm $dir
+    commandline -f repaint
+end
+funcsave ranger-cd
+
+# To bind Ctrl-O to ranger-cd, save this in `~/.config/fish/config.fish`:
+bind \ck ranger-cd
 

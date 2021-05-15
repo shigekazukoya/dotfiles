@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'yuki-yano/fzf-preview.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'

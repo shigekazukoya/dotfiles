@@ -1,1 +1,1 @@
-nnoremap <Leader>go <Cmd>QuickRun<CR>
+nnoremap <Leader>run <Cmd>QuickRun<CR>

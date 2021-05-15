@@ -8,6 +8,8 @@ runtime! plugins/*.vim
 if has('nvim')
   runtime! nvimplugins/*.vim
   lua require('plugins')
+else
+  runtime! vimplugins/*.vim
 endif
 
 "color============================================
@@ -94,8 +96,8 @@ nnoremap <Leader>vs :vs<CR><C-w>w
 set hidden
 set autoread
 set autochdir
-set nobackup
-set noswapfile
+set backup
+set swapfile
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
 set undofile
@@ -206,7 +208,6 @@ syntax enable
 set laststatus=2
 
 "utility==========================================
-nnoremap <Leader>cd :cd<Space>
 nnoremap + <C-a>
 nnoremap - <C-x>
 inoremap <C-t> <Esc><Left>"qx"qpa
