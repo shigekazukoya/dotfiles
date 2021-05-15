@@ -213,7 +213,15 @@ nnoremap - <C-x>
 inoremap <C-t> <Esc><Left>"qx"qpa
 nnoremap <C-CR> mzo<ESC>`z
 
-"settings-Utility
+"settings-Utility=================================
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
 nnoremap <leader>hi <Cmd>echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+
+"set filetype=====================================
+augroup SetFileType
+  autocmd!
+  autocmd BufNewFile,BufRead *.fish setf fish
+augroup end
+
+
