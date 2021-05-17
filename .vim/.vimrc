@@ -1,29 +1,30 @@
 let mapleader="\<Space>"
 
 "plugins==========================================
-source ~/dotfiles/.vim/plugins.vim
-set runtimepath+=~/dotfiles/.vim
-runtime! plugins/*.vim
+ source ~/dotfiles/.vim/plugins.vim
+ set runtimepath+=~/dotfiles/.vim
+ runtime! plugins/*.vim
 
-if has('nvim')
-  runtime! nvimplugins/*.vim
-  lua require('plugins')
-else
-  runtime! vimplugins/*.vim
-endif
+ if has('nvim')
+   runtime! nvimplugins/*.vim
+   lua require('plugins')
+ else
+   runtime! vimplugins/*.vim
+ endif
 
+nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 "color============================================
 source ~/dotfiles/.vim/color.vim
 colorscheme nord
 
 "system===========================================
-set clipboard&
-set clipboard^=unnamedplus
-set mouse=a
+ set clipboard&
+"  set clipboard^=unnamedplus
+ set mouse=a
 
 " if system('uname -a | grep Microsoft') != ''
-  augroup myYank
-    autocmd!
+ augroup myYank
+   autocmd!
     autocmd TextYankPost * :call system('clip.exe', @")
   augroup END
 " endif
@@ -118,6 +119,8 @@ endif
 "barbar.vimで設定
 " nnoremap < <Cmd>bp<CR>
 " nnoremap > <Cmd>bn<CR>
+nnoremap t, <Cmd>bp<CR>
+nnoremap t. <Cmd>bn<CR>
 
 augroup createFile
   autocmd! BufWritePre *
@@ -127,8 +130,8 @@ augroup createFile
 augroup END
 
 "Tab==============================================
-nnoremap <silent> tt gt
-nnoremap <silent> tr gT
+" nnoremap <silent> tt gt
+" nnoremap <silent> tr gT
 
 "command==========================================
 set wildmenu

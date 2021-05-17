@@ -24,6 +24,6 @@ nnoremap t4 :s/#\+<Space>//e<CR>I####<Space><Esc>:noh<CR>w
 augroup folding
   autocmd!
   autocmd BufWritePost,BufWinLeave,BufLeave *.md if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-  autocmd BufEnter,BufWinEnter *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+  autocmd BufEnter,BufWinEnter,BufRead *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 augroup END
 set viewoptions-=options

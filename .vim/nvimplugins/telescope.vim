@@ -4,9 +4,8 @@ noremap th <cmd>Telescope oldfiles<cr>
 
 nnoremap <space>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <space>fc <cmd>lua require'telescope.builtin'.find_files{  find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
-nnoremap <space>fall <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}<CR>
+nnoremap <space>fa <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <space>fgrep <cmd>lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}<CR>
-nnoremap <space>fdot <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/dotfiles/", find_command = {"rg","--files", "--hidden", "--glob=!.git/*"}}<CR>
 
 nnoremap <leader>tel <cmd>Telescope<CR>
 nnoremap tll <cmd>Telescope<CR>
