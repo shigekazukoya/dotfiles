@@ -77,6 +77,7 @@ inoremap <silent> jj <ESC><Cmd>w<CR>
 inoremap <C-j> <ESC>
 tnoremap <ESC> <C-\><C-n>
 tnoremap jj <C-\><C-n>
+nnoremap gr :%s;\<<C-R><C-W>\>;g<Left><Left>;
 
 "window===========================================
 set splitbelow
@@ -226,5 +227,4 @@ augroup SetFileType
   autocmd!
   autocmd BufNewFile,BufRead *.fish setf fish
 augroup end
-
 

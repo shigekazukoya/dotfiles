@@ -1,7 +1,4 @@
-" wslのシンボリックリンクとの相性がよくない
-
 noremap th <cmd>Telescope oldfiles<cr>
-
 nnoremap <space>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <space>fc <cmd>lua require'telescope.builtin'.find_files{  find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <space>fa <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}<CR>
@@ -37,7 +34,6 @@ lua <<EOF
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
-      'rg',
       '--color=never',
       '--no-heading',
       '--with-filename',

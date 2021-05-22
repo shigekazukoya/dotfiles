@@ -31,6 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'kana/vim-niceblock'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
+Plug 'thinca/vim-scouter'
 
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
@@ -43,8 +44,9 @@ if has('nvim')
   Plug 'fannheyward/telescope-coc.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'folke/which-key.nvim'
+  " Plug 'folke/which-key.nvim'
   Plug 'kevinhwang91/nvim-bqf'
+  Plug 'neovim/nvim-lspconfig'
 endif
 
 call plug#end()

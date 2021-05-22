@@ -9,6 +9,18 @@ let g:lightline = {
 			\'coc': 'coc#status'
 			\}
 			\}
+let g:coc_global_extensions = [
+      \ 'coc-lists',
+      \ 'coc-vimlsp',
+      \ 'coc-fish',
+      \ 'coc-json',
+      \ 'coc-lua',
+      \ 'coc-omnisharp',
+      \ 'coc-python',
+      \ 'coc-rls',
+      \ 'coc-tsserver',
+      \ 'coc-xml',
+      \ ]
 
 "Diagnosticsの、左横のアイコンの色設定
 highlight CocErrorSign ctermfg=15 ctermbg=196

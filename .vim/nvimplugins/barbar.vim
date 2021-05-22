@@ -2,8 +2,8 @@ let bufferline = get(g:, 'bufferline', {})
 let bufferline.closable=v:false
 let bufferline.icon_custom_colors = v:true
 
-nnoremap < <Cmd>BufferPrevious<CR>
-nnoremap > <Cmd>BufferNext<CR>
+nnoremap <nowait> < <Cmd>BufferPrevious<CR>
+nnoremap <nowait> > <Cmd>BufferNext<CR>
 nnoremap tr :BufferPrevious<CR>
 nnoremap tt :BufferNext<CR>
 nnoremap <C-p> :BufferPick<CR>
