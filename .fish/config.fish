@@ -1,5 +1,6 @@
 set zenhan /mnt/c/Apps/zenhan/bin64/zenhan.exe
 set EDITOR nvim
+fish_vi_key_bindings
 
 export DISPLAY=(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 

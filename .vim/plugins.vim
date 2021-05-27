@@ -33,6 +33,10 @@ Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 Plug 'thinca/vim-scouter'
 
+Plug 'alvan/vim-closetag'
+Plug 'cohama/lexima.vim'
+Plug 'rust-lang/rust.vim'
+
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'pepo-le/win-ime-con.nvim'
@@ -47,6 +51,7 @@ if has('nvim')
   " Plug 'folke/which-key.nvim'
   Plug 'kevinhwang91/nvim-bqf'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0)  }  }
 endif
 
 call plug#end()

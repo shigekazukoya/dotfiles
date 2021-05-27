@@ -27,6 +27,7 @@ highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
 nmap <leader>cl :<C-u>CocList<CR>
+nnoremap tj :CocList files<CR>
 nmap <leader>ca :<C-u>call CocAction('doHover')<CR>
 nmap <leader>cb <Plug>(coc-definition)
 nmap <leaer>cr <Plug>(coc-references)
