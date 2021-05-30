@@ -2,6 +2,7 @@ let g:fern#renderer="nerdfont"
 let g:fern#default_hidden=1
 
 nnoremap <Leader>dir <Cmd>Fern . -reveal=% -drawer<CR>
+nnoremap <Leader>didd <Cmd>Fern . -reveal=% -drawer -toggle<CR>
 nnoremap <Leader>dvim <Cmd>Fern ~/dotfiles/.vim/plugins/ -drawer<CR>
 nnoremap <Leader>nvim <Cmd>Fern ~/dotfiles/.vim/nvimplugins/ -drawer<CR>
 

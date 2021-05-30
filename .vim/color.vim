@@ -12,6 +12,15 @@ function s:set_color()
   highlight IncSearch guifg=#221392
   highlight Vimstring guifg=#e5b49c
   highlight luastring guifg=#e5b49c
+  highlight luastring guifg=#e5b49c
+  highlight mkdNonListItemBlock guifg=#b0c8db
+
+  highlight Cursor guifg=white guibg=#581b2d
+  highlight iCursor guifg=white guibg=#581b2d
+  set guicursor=n-v-c:block-Cursor
+  set guicursor+=i:ver100-iCursor
+  set guicursor+=n-v-c:blinkon0
+  set guicursor+=i:blinkwait10
 
   if has('nvim')
     call Set_color_barbar()

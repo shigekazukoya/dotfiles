@@ -98,8 +98,8 @@ nnoremap <Leader>vs :vs<CR><C-w>w
 set hidden
 set autoread
 set autochdir
-set backup
-set swapfile
+set nobackup
+set noswapfile
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
 set undofile
