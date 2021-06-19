@@ -220,6 +220,9 @@ nnoremap <C-CR> mzo<ESC>`z
 "settings-Utility=================================
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>:noh<CR>
+nnoremap <Leader>tmux <Cmd>e ~/.tmux.conf<CR>
+nnoremap <Leader>fish <Cmd>e ~/.config/fish/config.fish<CR>
+
 nnoremap <leader>hi <Cmd>echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 
 "set filetype=====================================
