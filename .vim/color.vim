@@ -16,7 +16,7 @@ function s:set_color()
   highlight mkdNonListItemBlock guifg=#b0c8db
 
   highlight Cursor guifg=white guibg=#581b2d
-  highlight iCursor guifg=white guibg=#581b2d
+  highlight iCursor guifg=white guibg=#f7d4df
   set guicursor=n-v-c:block-Cursor
   set guicursor+=i:ver100-iCursor
   set guicursor+=n-v-c:blinkon0

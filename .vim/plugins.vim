@@ -37,6 +37,7 @@ Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
 Plug 'rust-lang/rust.vim'
 
+
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'pepo-le/win-ime-con.nvim'
@@ -48,10 +49,12 @@ if has('nvim')
   Plug 'fannheyward/telescope-coc.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'hoob3rt/lualine.nvim'
-  " Plug 'folke/which-key.nvim'
+  Plug 'folke/which-key.nvim'
   Plug 'kevinhwang91/nvim-bqf'
   Plug 'neovim/nvim-lspconfig'
   Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0)  }  }
+  Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
+  Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 endif
 
 call plug#end()
