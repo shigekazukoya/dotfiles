@@ -21,7 +21,7 @@ function! s:init_fern() abort
   nmap <buffer> r <Plug>(fern-action-rename)
   nmap <buffer> qq <Cmd>quit<CR>
   nmap <buffer><nowait> l <Plug>(fern-my-expand-or-enter)
-  nmap <buffer><nowait> h <Plug>(fern-my-collapse-or-leave)
+  nmap <buffer><nowait> h <Plug>(fern-action-focus:parent)
   nmap <buffer> u <Plug>(fern-action-leave)
 
   nmap <buffer><expr>

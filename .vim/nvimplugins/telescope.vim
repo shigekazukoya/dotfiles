@@ -63,7 +63,7 @@ require('telescope').setup{
     shorten_path = true,
     winblend = 20,
     width = 0.75,
-    preview= true,
+    preview= false,
     preview_cutoff = 120,
     results_height = 1,
     results_width = 0.8,

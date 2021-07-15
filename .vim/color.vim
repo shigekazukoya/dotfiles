@@ -13,7 +13,7 @@ function s:set_color()
   highlight Vimstring guifg=#e5b49c
   highlight luastring guifg=#e5b49c
   highlight luastring guifg=#e5b49c
-  highlight mkdNonListItemBlock guifg=#b0c8db
+  " highlight mkdNonListItemBlock guifg=#b0c8db
 
   highlight Cursor guifg=white guibg=#581b2d
   highlight iCursor guifg=white guibg=#f7d4df
