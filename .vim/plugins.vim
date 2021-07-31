@@ -21,6 +21,7 @@ Plug 'simeji/winresizer'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'yuki-yano/fern-preview.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -36,7 +37,8 @@ Plug 'thinca/vim-scouter'
 Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
 Plug 'rust-lang/rust.vim'
-
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite-outline'
 
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
@@ -55,6 +57,7 @@ if has('nvim')
   Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0)  }  }
   Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
   Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+  " Plug 'simrat39/symbols-outline.nvim'
 endif
 
 call plug#end()

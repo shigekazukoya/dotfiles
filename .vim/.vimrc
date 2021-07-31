@@ -12,6 +12,7 @@ let mapleader="\<Space>"
    runtime! vimplugins/*.vim
  endif
 
+
 nnoremap <Leader>vim <Cmd>e $MYVIMRC<CR>
 "color============================================
 source ~/dotfiles/.vim/color.vim

@@ -7,6 +7,9 @@ set foldlevelstart=2
 " masukomi/vim-markdown-folding
 set nocompatible
 
+vmap m I*<Space><Esc>:noh<CR>w
+vnoremap M :s/*\+<Space>//e<CR>:noh<CR>w
+
 augroup NestedMarkdownFolds
   autocmd!
   filetype plugin indent on
