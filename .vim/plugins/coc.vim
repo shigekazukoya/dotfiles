@@ -26,18 +26,18 @@ let g:coc_global_extensions = [
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
-nmap <leader>cl :<C-u>CocList<CR>
+nmap <Leader>cl :<C-u>CocList<CR>
 nnoremap tj :CocList files<CR>
-nmap <leader>ca :<C-u>call CocAction('doHover')<CR>
-nmap <leader>cb <Plug>(coc-definition)
-nmap <leaer>cr <Plug>(coc-references)
-nmap <leader>ci <Plug>(coc-implementation)
-nmap <leader>cn <Plug>(coc-rename)
-nmap <leader>cf <Plug>(coc-format)
-nmap <leader>cq <Plug>(coc-fix-current)
-nmap <leader>cc <Plug>(coc-codeaction)
-nmap <leader>c, <Plug>(coc-diagnostic-prev)
-nmap <leader>c. <Plug>(coc-diagnostic-next)
+nmap <Leader>ca :<C-u>call CocAction('doHover')<CR>
+nmap <Leader>cb <Plug>(coc-definition)
+nmap <Leader>cr <Plug>(coc-references)
+nmap <Leader>ci <Plug>(coc-implementation)
+nmap <Leader>cn <Plug>(coc-rename)
+nmap <Leader>cf <Plug>(coc-format)
+nmap <Leader>cq <Plug>(coc-fix-current)
+nmap <Leader>cc <Plug>(coc-codeaction)
+nmap <Leader>c, <Plug>(coc-diagnostic-prev)
+nmap <Leader>c. <Plug>(coc-diagnostic-next)
 
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)

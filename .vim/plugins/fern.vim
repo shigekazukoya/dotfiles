@@ -28,7 +28,7 @@ function! s:init_fern() abort
   nmap <buffer> s <Plug>(fern-action-open:vsplit)
   nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
   nmap <buffer> ma <Plug>(fern-action-new-path)
-  nmap <buffer> ma <Plug>(fern-action-new-path)
+  nmap <buffer> mv <Plug>(fern-action-move)
   " nmap <buffer> K 5k
   " nmap <buffer> J 5j
   nmap <buffer> dd <Plug>(fern-action-remove)

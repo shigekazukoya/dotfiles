@@ -4,12 +4,7 @@ nnoremap <space>fc <cmd>lua require'telescope.builtin'.find_files{  find_command
 nnoremap <space>fa <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}<CR>
 nnoremap <space>fgrep <cmd>lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}<CR>
 
-nnoremap <leader>tel <cmd>Telescope<CR>
-nnoremap tll <cmd>Telescope<CR>
-nnoremap tlc <cmd>Telescope commands<CR>
-nnoremap tlj <cmd>Telescope jumplist<CR>
-nnoremap tld <cmd>Telescope fd<CR>
-nnoremap tlg <cmd>Telescope git_commits<CR>
+nnoremap tl <cmd>Telescope<CR>
 
 function Set_telescope()
   highlight TelescopeSelection      guifg=#4883d5 gui=bold " selected item
@@ -34,6 +29,7 @@ lua <<EOF
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
+      'rg',
       '--color=never',
       '--no-heading',
       '--with-filename',
@@ -41,7 +37,7 @@ require('telescope').setup{
       '--column',
       '--smart-case'
     },
-    prompt_position = "bottom",
+    -- prompt_position = "bottom",
     prompt_prefix = " ",
     selection_caret = "→ ",
     entry_prefix = "  ",
@@ -49,24 +45,15 @@ require('telescope').setup{
     selection_strategy = "reset",
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
-    layout_defaults = {
-      horizontal = {
-        mirror = false,
-      },
-      vertical = {
-        mirror = false,
-      },
-    },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
     winblend = 20,
-    width = 0.75,
+    -- width = 0.75,
     preview= false,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
+    -- preview_cutoff = 120,
+    -- results_height = 1,
+    -- results_width = 0.8,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = false,
@@ -75,6 +62,27 @@ require('telescope').setup{
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+    layout_config = {
+      prompt_position = 'bottom',
+      width = 0.75,
+      horizontal = {
+        mirror = false,
+        },
+      vertical = {
+        mirror = false,
+        },
+    },
+  extensions = {
+        fzf_writer = {
+            minimum_grep_characters = 2,
+            minimum_files_characters = 2,
+
+            -- Disabled by default.
+            -- Will probably slow down some aspects of the sorter, but can make color highlights.
+            -- I will work on this more later.
+            use_highlighter = true,
+        }
+    }
   }
 }
 EOF
