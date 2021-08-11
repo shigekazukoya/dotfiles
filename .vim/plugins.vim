@@ -39,7 +39,9 @@ Plug 'cohama/lexima.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
+Plug 'previm/previm'
 
+Plug 'ferrine/md-img-paste.vim'
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'pepo-le/win-ime-con.nvim'
@@ -59,6 +61,7 @@ if has('nvim')
   Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
   Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
   " Plug 'simrat39/symbols-outline.nvim'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 endif
 
 call plug#end()

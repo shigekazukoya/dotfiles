@@ -24,9 +24,20 @@ nnoremap t2 :s/#\+<Space>//e<CR>I##<Space><Esc>:noh<CR>w
 nnoremap t3 :s/#\+<Space>//e<CR>I###<Space><Esc>:noh<CR>w
 nnoremap t4 :s/#\+<Space>//e<CR>I####<Space><Esc>:noh<CR>w
 
+command -nargs=1 InsertPng call s:pngPaste(<f-args>)
+nnoremap <Leader>png :InsertPng<Space>
+
 augroup folding
   autocmd!
   autocmd BufWritePost,BufWinLeave,BufLeave *.md if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
   autocmd BufEnter,BufWinEnter,BufRead *.md if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 augroup END
 set viewoptions-=options
+
+function s:pngPaste(name)
+  let insertText = '![](resource/'.a:name.'.png)'
+  exec ':normal i'.insertText
+  :!mkdir resource
+  let pngSaveCommand = '!powershell.exe ''(Get-Clipboard -Format Image).Save("resource\' .a:name .'.png")'''
+  exec pngSaveCommand
+endfunc
