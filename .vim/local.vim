@@ -11,6 +11,7 @@ nnoremap <Leader>bug <Cmd>Fern /mnt/c/Data/Task/BugItems -drawer<CR>
 
 autocmd VimEnter * nested  call s:OpenDirectoryTree()
 
+
 function! s:OpenDirectoryTree()
   if @% == '' && s:GetBufByte() == 0
     Fern ~/memo -drawer
