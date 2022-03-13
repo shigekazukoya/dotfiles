@@ -1,13 +1,14 @@
 let mapleader="\<Space>"
 
 "plugins==========================================
+ source ~/dotfiles/.vim/local.vim
  source ~/dotfiles/.vim/plugins.vim
  set runtimepath+=~/dotfiles/.vim
  runtime! plugins/*.vim
 
  if has('nvim')
-   runtime! nvimplugins/*.vim
    lua require('plugins')
+   runtime! nvimplugins/*.vim
  else
    runtime! vimplugins/*.vim
  endif
@@ -94,6 +95,16 @@ nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
 nnoremap <Leader>sp :sp<CR><C-w>w
 nnoremap <Leader>vs :vs<CR><C-w>w
+nnoremap fh <C-w>h
+nnoremap fj <C-w>j
+nnoremap fk <C-w>k
+nnoremap fl <C-w>l
+nnoremap fH <C-w>H
+nnoremap fJ <C-w>J
+nnoremap fK <C-w>K
+nnoremap fL <C-w>L
+nnoremap fs :sp<CR><C-w>w
+nnoremap fv :vs<CR><C-w>w
 
 "buffer===========================================
 set hidden
@@ -175,8 +186,8 @@ vnoremap n nzz
 vnoremap N Nzz
 
 "grep=============================================
-nnoremap tn :cn<CR>
-nnoremap tp :cp<CR>
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
 augroup QuickFix
 	autocmd!
 	autocmd QuickFixCmdPost *grep* cwindow

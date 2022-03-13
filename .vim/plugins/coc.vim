@@ -26,14 +26,15 @@ let g:coc_global_extensions = [
 highlight CocErrorSign ctermfg=15 ctermbg=196
 highlight CocWarningSign ctermfg=0 ctermbg=172
 
+nmap fb <Plug>(coc-definition)
+nmap fr <Plug>(coc-rename)
+
 nmap <Leader>cl :<C-u>CocList<CR>
-nnoremap tj :CocList files<CR>
+nnoremap <Leader>cf :CocList files<CR>
 nmap <Leader>ca :<C-u>call CocAction('doHover')<CR>
-nmap <Leader>cb <Plug>(coc-definition)
 nmap <Leader>cr <Plug>(coc-references)
 nmap <Leader>ci <Plug>(coc-implementation)
-nmap <Leader>cn <Plug>(coc-rename)
-nmap <Leader>cf <Plug>(coc-format)
+nmap <Leader>cm <Plug>(coc-format)
 nmap <Leader>cq <Plug>(coc-fix-current)
 nmap <Leader>cc <Plug>(coc-codeaction)
 nmap <Leader>c, <Plug>(coc-diagnostic-prev)

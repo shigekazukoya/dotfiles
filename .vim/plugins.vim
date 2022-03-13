@@ -53,15 +53,17 @@ if has('nvim')
   Plug 'nvim-telescope/telescope-fzf-writer.nvim'
   Plug 'fannheyward/telescope-coc.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'hoob3rt/lualine.nvim'
   Plug 'folke/which-key.nvim'
   Plug 'kevinhwang91/nvim-bqf'
   Plug 'neovim/nvim-lspconfig'
   Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0)  }  }
   Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
   Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
-  " Plug 'simrat39/symbols-outline.nvim'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'romgrk/barbar.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
 endif
 
 call plug#end()

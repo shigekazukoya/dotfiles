@@ -4,9 +4,6 @@ let bufferline.icon_custom_colors = v:true
 
 nnoremap <nowait> < <Cmd>BufferPrevious<CR>
 nnoremap <nowait> > <Cmd>BufferNext<CR>
-nnoremap tr :BufferPrevious<CR>
-nnoremap tt :BufferNext<CR>
-nnoremap <C-p> :BufferPick<CR>
 
 nnoremap <Leader>dd <Cmd>BufferClose<CR>
 

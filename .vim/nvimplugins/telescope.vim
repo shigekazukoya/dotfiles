@@ -1,10 +1,25 @@
-noremap th <cmd>Telescope oldfiles<cr>
-nnoremap <space>ff <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
-nnoremap <space>fc <cmd>lua require'telescope.builtin'.find_files{  find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}<CR>
-nnoremap <space>fa <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}<CR>
-nnoremap <space>grep <cmd>lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}<CR>
+nnoremap ft <cmd>Telescope<CR>
+nnoremap fo <cmd>Telescope oldfiles<cr>
 
-nnoremap tl <cmd>Telescope<CR>
+nnoremap ff <cmd>FindFile<CR>
+nnoremap fa <cmd>FindFileAll<CR>
+nnoremap fg <cmd>LiveGrep<CR>
+
+command! FindFile call s:FindFile()
+command! FindFileAll call s:FindFileAll()
+command! LiveGrep call s:LiveGrep()
+
+function! s:FindFile()
+  lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files", "--glob=!*.{git,lnk}"}}
+endfunction
+
+function! s:FindFileAll()
+  lua require'telescope.builtin'.find_files{ cwd = "~/", find_command = {"rg", "--follow", "--files","--hidden", "--glob=!*.{git,lnk}"}}
+endfunction
+
+function! s:LiveGrep()
+  lua require'telescope.builtin'.live_grep{find_command = {"rg", "--hidden", "--follow","--glob=!*.{git,lnk}"}}
+endfunction
 
 function Set_telescope()
   highlight TelescopeSelection      guifg=#4883d5 gui=bold " selected item
