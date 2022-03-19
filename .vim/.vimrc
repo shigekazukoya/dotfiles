@@ -161,6 +161,10 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+nnoremap Q <cmd>confirm qa<CR>
+xnoremap Q <cmd>confirm qa<CR>
+onoremap Q <cmd>confirm qa<CR>
+
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap <C-b> <Left>

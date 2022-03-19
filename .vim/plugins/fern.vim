@@ -3,14 +3,11 @@ let g:fern#default_hidden=1
 
 nnoremap <Leader>dir <Cmd>Fern . -reveal=% -drawer<CR>
 nnoremap <Leader>didd <Cmd>Fern . -reveal=% -drawer -toggle<CR>
-nnoremap <Leader>dvim <Cmd>Fern ~/dotfiles/.vim/plugins/ -drawer<CR>
-nnoremap <Leader>nvim <Cmd>Fern ~/dotfiles/.vim/nvimplugins/ -drawer<CR>
 
 function! s:fern_settings() abort
-  " nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> p <Plug>(fern-action-preview:auto:toggle)
-  nmap <silent> <buffer> J <Plug>(fern-action-preview:scroll:down:half)
-  nmap <silent> <buffer> K <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> L <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> H <Plug>(fern-action-preview:scroll:up:half)
   nmap <silent> <buffer> <Esc> <Plug>(fern-action-preview:auto:close)
 endfunction
 
@@ -28,8 +25,8 @@ function! s:init_fern() abort
   nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
   nmap <buffer> ma <Plug>(fern-action-new-path)
   nmap <buffer> mv <Plug>(fern-action-move)
-  " nmap <buffer> K 5k
-  " nmap <buffer> J 5j
+  nmap <buffer> K 5k
+  nmap <buffer> J 5j
   nmap <buffer> dd <Plug>(fern-action-remove)
   nmap <buffer> r <Plug>(fern-action-rename)
   nmap <buffer> q <Cmd>quit<CR>
