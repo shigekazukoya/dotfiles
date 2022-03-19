@@ -53,6 +53,6 @@ augroup END  " }}}
 
 command! CommitMemo call s:CommitMemo()
 function! s:CommitMemo()
-  !fish "~/memo/autocommiter.fish"
+  !fish ~/memo/autocommiter.fish
 endfunction
 
