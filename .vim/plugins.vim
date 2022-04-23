@@ -44,7 +44,7 @@ Plug 'ferrine/md-img-paste.vim'
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'pepo-le/win-ime-con.nvim'
-  Plug 'neoclide/coc.nvim',{'branch':'release'}
+  " Plug 'neoclide/coc.nvim',{'branch':'release'}
   Plug 'romgrk/barbar.nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
@@ -55,6 +55,18 @@ if has('nvim')
   Plug 'folke/which-key.nvim'
   Plug 'kevinhwang91/nvim-bqf'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
+
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+
   Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0)  }  }
   Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
   Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
@@ -62,6 +74,7 @@ if has('nvim')
   Plug 'romgrk/barbar.nvim'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'Xuyuanp/scrollbar.nvim'
 
 endif
 

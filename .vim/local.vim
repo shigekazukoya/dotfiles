@@ -50,8 +50,8 @@ augroup vimrc-auto-mkdir  " {{{
   endfunction  " }}}
 augroup END  " }}}
 
-
 command! CommitMemo call s:CommitMemo()
+
 function! s:CommitMemo()
   !fish ~/memo/autocommiter.fish
 endfunction
